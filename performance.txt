@@ -6,6 +6,6 @@ Configuration:
 
 Results:
   - Single-Threaded Baseline Runtime (Estimated): ~162 seconds
-  - Concurrent (8 workers) Runtime: 32.53 seconds
+  - Concurrent (8 workers) Runtime: 32.54 seconds
 
 Performance Gain: Approximately 5.00x faster.
