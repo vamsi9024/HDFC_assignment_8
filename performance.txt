@@ -1,0 +1,11 @@
+--- Performance Benchmark ---
+
+Configuration:
+  - Worker Threads: 8
+  - Retry Limit: 3
+
+Results:
+  - Single-Threaded Baseline Runtime (Estimated): ~162 seconds
+  - Concurrent (8 workers) Runtime: 32.53 seconds
+
+Performance Gain: Approximately 5.00x faster.

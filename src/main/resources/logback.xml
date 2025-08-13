@@ -1,0 +1,28 @@
+<configuration>
+    <!-- Appender for Console Output (Human-readable) -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Appender for Audit File (Machine-readable) -->
+    <appender name="AUDIT_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>audit.log</file>
+        <append>false</append> <!-- Overwrite on each run -->
+        <encoder>
+            <!-- Pattern: ISO_TIMESTAMP,ClaimID,ThreadName,OldStatus,NewStatus,Attempt -->
+            <pattern>%d{ISO8601},%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Logger for the audit trail. Routes messages to AUDIT_FILE only. -->
+    <logger name="AuditLogger" level="INFO" additivity="false">
+        <appender-ref ref="AUDIT_FILE"/>
+    </logger>
+
+    <!-- Root logger. Default for all other classes. Routes INFO level and above to Console. -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
