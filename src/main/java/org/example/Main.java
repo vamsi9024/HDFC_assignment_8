@@ -14,7 +14,7 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Main {
-    // --- CORRECTED LOGGER DECLARATION (NO CAST) ---
+    // --- CORRECTED LOGGER DECLARATION (NO CAST) ----
     private static final Logger log = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) {
